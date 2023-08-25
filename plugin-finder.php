@@ -81,8 +81,8 @@ class Plugin_Finder {
             if ( isset( $_GET['sort_by'] ) ) {
 				$sort_by = sanitize_text_field( wp_unslash( $_GET['sort_by'] ) );
 			} 
-			
-			$args->sort_by  = $sort_by;
+
+            $args->sort_by  = $sort_by;
 
 		}
 
@@ -107,8 +107,10 @@ class Plugin_Finder {
         
         if ( 'query_plugins' === $action && $res->info['results'] > 1 ) {
 			$plugins_list = $res->plugins;
-			$keys         = array_column( $plugins_list, $args->sort_by );
-			$order        = $args->sort_by === 'name' ? SORT_ASC : SORT_DESC;
+			
+			$sort_by      = ( strpos( $args->sort_by, 'name' ) > 0 ) ? 'name' : $args->sort_by;
+            $keys         = array_column( $plugins_list, $sort_by );
+            $order        = ( strpos( $args->sort_by, 'asc' ) > 0 ) ? SORT_ASC : SORT_DESC;
             array_multisort( $keys, $order, $plugins_list );
             $res->plugins = $plugins_list;
 		    return $res;

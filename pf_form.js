@@ -2,7 +2,8 @@ let options = `<label for="sort_by" style="display: inline-block;padding:5px;mar
       <select name="sort_by" id="sort_by" >
         <option value="">Sort by</option>
         <option value="rating">Rating</option>
-        <option value="name">Name (A-Z)</option>
+        <option value="name_asc">Name (A-Z)</option>
+        <option value="name_desc">Name (Z-A)</option>
         <option value="active_installs">Active Installs</option>
         <option value="last_updated">Last Updated</option>
         <option value="downloaded">Most Downloaded</option>
