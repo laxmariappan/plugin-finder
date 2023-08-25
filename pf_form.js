@@ -1,4 +1,4 @@
-let options = `<label for="sort_by" class=" idden">Sort By:</label>
+let options = `<label for="sort_by" style="display: inline-block;padding:5px;margin-top: 10px;vertical-align: top;">Sort By:</label>
       <select name="sort_by" id="sort_by" >
         <option value="">Sort by</option>
         <option value="rating">Rating</option>
