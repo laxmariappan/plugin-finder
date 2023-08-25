@@ -45,5 +45,14 @@ jQuery(document).ready(function ($) {
     }, 1000)
   );
 
+  $("#search-plugins").keydown(function (e) {
+    if (e.keyCode === 13) {
+      console.log(e.keyCode);
+      $(".search-form")[0].submit();
+    }
+  });
+
   $("#search-plugins").unbind("keyup input");
+
+  
 });
