@@ -83,15 +83,9 @@ class Plugin_Finder {
 			} else {
 				$sort_by = 'name';
 			}
-			if ( isset( $_GET['sort_by'] ) ) {
-				$order    = sanitize_text_field( wp_unslash( $_GET['sort_by'] ) );
-				$order_by = ( 'asc' === $order ) ? SORT_ASC : SORT_DESC;
-			} else {
-				$order_by = SORT_ASC;
-			}
+			
 
 			$args->sort_by  = $sort_by;
-			$args->order_by = $order_by;
 
 		}
 
@@ -113,7 +107,8 @@ class Plugin_Finder {
 		if ( 'query_plugins' === $action && $res->info['results'] > 1 ) {
 			$plugins_list = $res->plugins;
 			$keys         = array_column( $plugins_list, $args->sort_by );
-			array_multisort( $keys, $args->order_by, $plugins_list );
+			$order        = $args->sort_by === 'name' ? SORT_ASC : SORT_DESC;
+            array_multisort( $keys, $order, $plugins_list );
 		}
 		$res->plugins = $plugins_list;
 
