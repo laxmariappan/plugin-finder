@@ -1,5 +1,12 @@
-# plugin-finder
-Filter and sort WP plugins search results
+# Plugin Finder
+
+Stable Tag: 1.0.0 
+Requires at least: 6.1 
+Tested up to: 6.3
+Requires PHP: 7.4 
+License: GPL v2 or later  
+Tags: plugins, search results, search, sorting 
+Contributors: lakshmananphp  
 
 ## Description
 
@@ -15,8 +22,6 @@ Thanks to [WebDevStudios](https://wordpress.org/five-for-the-future/pledge/webde
 * created as part of [#5FTF](https://wordpress.org/five-for-the-future/) day
 
 ## Screenshots
-
-![image](https://github.com/laxmariappan/plugin-finder/assets/22427070/72fdfdae-f08a-41b5-82e5-204e95166a25)
 
 1. The **Plugin Finder** showing plugins that are sorted by last updated time.
 
@@ -37,4 +42,3 @@ Development of this code happens at [github.com/laxmariappan/plugin-finder](http
 ### 1.0.0
 
 * Initial release
-
