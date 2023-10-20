@@ -75,18 +75,12 @@ class Plugin_Finder {
 	 * @author Lax Mariappan <lax@webdevstudios.com>
 	 */
 	public function update_search_args( $args, $action ) {
-
 		if ( 'query_plugins' === $action && isset( $_GET['sort_by'] ) ) {
-
-            if ( isset( $_GET['sort_by'] ) ) {
-				$sort_by = sanitize_text_field( wp_unslash( $_GET['sort_by'] ) );
-			} 
-
-            $args->sort_by  = $sort_by;
-
+			$sort_by = sanitize_text_field( wp_unslash( $_GET['sort_by'] ) );
+            		$args->sort_by  = $sort_by;
 		}
 
-        $args->per_page = 100;
+       		$args->per_page = 100;
 
 		return $args;
 	}
